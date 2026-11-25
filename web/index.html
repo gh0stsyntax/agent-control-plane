@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AEAP Control Center</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23233a5e'/><path d='M8 23 16 8l8 15M11 18h10' stroke='%23fff' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo">A</div>
+      <div>
+        <div class="brand-title">AEAP</div>
+        <div class="brand-sub">Agentic Enterprise Automation</div>
+      </div>
+    </div>
+    <nav id="nav">
+      <a href="#/overview" data-view="overview"><span class="nav-ic">◧</span>Übersicht</a>
+      <a href="#/intake" data-view="intake"><span class="nav-ic">✉</span>Eingang <small>L0</small></a>
+      <a href="#/cases" data-view="cases"><span class="nav-ic">▤</span>Cases <small>[4]</small></a>
+      <a href="#/action" data-view="action"><span class="nav-ic">✓</span>Action Center <small>[6]</small><b id="badge-tasks" class="badge"></b></a>
+      <a href="#/queues" data-view="queues"><span class="nav-ic">⇶</span>Orchestrator <small>[13]</small></a>
+      <a href="#/systems" data-view="systems"><span class="nav-ic">▦</span>Systems of Record <small>L5</small></a>
+      <a href="#/governance" data-view="governance"><span class="nav-ic">⚖</span>Governance <small>Abschn. 2</small></a>
+      <a href="#/integration" data-view="integration"><span class="nav-ic">⇄</span>Integration <small>Abschn. 3</small></a>
+      <a href="#/audit" data-view="audit"><span class="nav-ic">≡</span>Audit &amp; Trace</a>
+      <a href="#/wissen/start" data-view="wissen" class="nav-kb"><span class="nav-ic">📘</span>Spickzettel <small>für alle</small></a>
+      <a href="#/wissen/planer" data-view="wissen" data-tab="planer" class="nav-kb nav-kb2"><span class="nav-ic">🧭</span>Workflow-Planer <small>neu</small></a>
+    </nav>
+    <div class="sidebar-foot">
+      Reference Implementation zu SDD Abschnitt 1 bis 3.<br>
+      LLM, DU und SAP sind simuliert.
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <h1 id="page-title">Übersicht</h1>
+      <div class="topbar-right">
+        <label class="user-pick">Angemeldet als
+          <select id="user-select"></select>
+        </label>
+        <button class="btn ghost" id="btn-reset" title="Alle Daten zuruecksetzen">Zurücksetzen</button>
+      </div>
+    </header>
+    <div id="ks-banner" hidden></div>
+    <div id="help"></div>
+    <main id="view"></main>
+  </div>
+
+  <div id="toast-host"></div>
+  <script src="knowledge.js"></script>
+  <script src="blueprint.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

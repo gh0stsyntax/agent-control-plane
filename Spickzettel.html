@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AEAP Spickzettel</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23233a5e'/><path d='M8 23 16 8l8 15M11 18h10' stroke='%23fff' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+  <link rel="stylesheet" href="web/styles.css">
+  <style>
+    body { display: block; }
+    .standalone-head { background: var(--side); color: #fff; padding: 18px 28px; display: flex; gap: 14px; align-items: center; }
+    .standalone-head .logo { width: 38px; height: 38px; border-radius: 8px; background: #2f5bd3; display: grid; place-items: center; font-weight: 700; }
+    .standalone-head h1 { margin: 0; font-size: 19px; }
+    .standalone-head p { margin: 2px 0 0; font-size: 12.5px; opacity: .75; }
+    #view { margin: 0 auto; max-width: 1140px; }
+  </style>
+</head>
+<body>
+  <header class="standalone-head">
+    <div class="logo">A</div>
+    <div>
+      <h1>AEAP Spickzettel · Agentic Enterprise Automation Platform</h1>
+      <p>SDD Abschnitt 1 (Architektur), 2 (Governance &amp; Guardrails) und 3 (Agenten &amp; Integration) in Alltagssprache. Funktioniert ohne laufende App.</p>
+    </div>
+  </header>
+  <main id="view"></main>
+  <script>window.AEAP_KB_STANDALONE = true;</script>
+  <script src="web/knowledge.js"></script>
+  <script src="web/blueprint.js"></script>
+  <script>
+    function show() {
+      const [tab, anchor] = location.hash.replace(/^#\/?/, "").split("/");
+      window.renderKnowledge(document.getElementById("view"), {
+        tab: tab || "start", anchor: anchor || null,
+        hrefFor: (t, a) => "#" + t + (a ? "/" + a : ""),
+      });
+    }
+    window.addEventListener("hashchange", show);
+    show();
+  </script>
+</body>
+</html>
