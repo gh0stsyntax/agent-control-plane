@@ -1,5 +1,7 @@
 # agent-control-plane (AEAP) — governed AI agents for enterprise processes
 
+[![tests](https://github.com/gh0stsyntax/agent-control-plane/actions/workflows/tests.yml/badge.svg)](https://github.com/gh0stsyntax/agent-control-plane/actions/workflows/tests.yml)
+
 A runnable **reference implementation** of a governance layer for AI agents: every proposal an agent makes goes through a
 **Policy Decision Point** (allow / escalate / block), tool calls must satisfy versioned **contracts**, inputs pass a **trust layer**
 (PII masking, prompt-injection patterns), external agents talk to it through a **signed bridge** (HMAC-SHA256, time window,
